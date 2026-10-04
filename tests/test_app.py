@@ -94,7 +94,6 @@ def test_delete_inventory_item(client):
 def test_delete_inventory_item_not_found(client):
     response = client.delete("/inventory/999")
     assert response.status_code == 404
-
 @patch("app.get_product_from_openfoodfacts")
 def test_find_openfoodfacts_product(mock_product, client):
     mock_product.return_value = {
